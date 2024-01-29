@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--    Device Attribute Assignment Value-->
+    <!--    Tree View for Device Attribute Assignment Value-->
+    <record model="ir.ui.view" id="device_attribute_view_tree">
+        <field name="name">device.attribute.value.tree</field>
+        <field name="model">device.attribute.value</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="device_attribute_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--    Action for Menu Visibility-->
+    <record id="action_device_attribute_assignment_value_view" model="ir.actions.act_window">
+        <field name="name">Device Attributes Assignment Value</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">device.attribute.value</field>
+        <field name="view_mode">tree</field>
+    </record>
+</odoo>

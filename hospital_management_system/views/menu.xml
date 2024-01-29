@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem id="menu_hospital_root" name="Hospital Management">
+<!--                <menuitem id="menu_hospital_operations" name="Operations">-->
+        <menuitem id="menu_patients" name="Patient Details" sequence="20"
+                  action="hospital_management_system.action_hospital_patient"/>
+        <menuitem id="menu_doctors" name="Doctor Details" sequence="30"
+                  action="hospital_management_system.action_hospital_doctor"/>
+        <menuitem id="menu_appointments" name="Appointments" sequence="40"
+                  action="hospital_management_system.action_hospital_appointment"/>
+<!--        <menuitem id="menu_appointments2" name="Appointments" sequence="50"-->
+<!--                  action="hospital_management_system.action_hospital_appointment"/>-->
+<!--                </menuitem>-->
+<!--                <menuitem id="menu_check_appointments" name="check_appointments" sequence="50"-->
+<!--                          action="hospital_management_system.action_check_appointment_wizard"/>-->
+    </menuitem>
+</odoo>

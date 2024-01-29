@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="view_data_display_wizard" model="ir.ui.view">
+            <field name="name">data.display.wizard.form</field>
+            <field name="model">data.display.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name='wizard_id'/>
+                        <field name='wizard_order_line'>
+                            <tree editable="bottom">
+                                <field name='name'/>
+                                <!--                                <field name='order_id'/>-->
+                                <field name='description'/>
+                                <field name='quantity'/>
+                                <field name='unit_price'/>
+                                <field name='taxes'/>
+                                <field name='tax_excl'/>
+                            </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button string="Save" type="object" name="save_data" class="oe_highlight"/>
+                        <button special="cancel" string="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_data_display_wizard" model="ir.actions.act_window">
+            <field name="name">Data Display Wizard</field>
+            <field name="res_model">data.display.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="sale_extension.view_data_display_wizard"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>

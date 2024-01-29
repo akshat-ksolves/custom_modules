@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="hospital_management_system.DemoTemplateBooleanToggle">
+        <div t-on-click="onClick">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" t-attf-checked="{{props.state.value}}"
+                       t-attf-style="{{props.state.value ? 'background-color : blue;' : 'background-color : orange;'}}" id="newToggleButtonField"/>
+            </div>
+        </div>
+    </t>
+</templates>

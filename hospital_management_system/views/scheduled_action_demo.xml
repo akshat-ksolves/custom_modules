@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    <record id="scheduled_action_demo_id" model="ir.cron">-->
+<!--        <field name="name">Scheduled Email</field>-->
+<!--        <field name="model_id" ref="model_hospital_appointment"/>-->
+<!--        <field name="state">code</field>-->
+<!--        <field name="active" eval="send_appointment_mail" />-->
+<!--        <field name="code">model.send_appointment_mail()</field>-->
+<!--        <field name='interval_number'>1</field>-->
+<!--        <field name='interval_type'>minutes</field>-->
+<!--        <field name="numbercall">-1</field>-->
+<!--    </record>-->
+</odoo>
+
+<!--pip8 standard in python-->
+<!--Github-->
+<!--Debugger-->
+<!--Sync GitHub with Pycharm-->
+<!--Two Databases and Connect them together, Get Data from them
+Click to push in another database
+Updating the fields of the Database-->
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="sample_report_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <h1>Sample Report</h1>
+                        <table>
+                            <th>
+                                <span t-field="o.custom_field.name"/>
+                            </th>
+                            <th>
+                                <span t-field="o.custom_field.description"/>
+                            </th>
+                            <th>
+                                <span t-field="o.custom_field.quantity"/>
+                            </th>
+                            <th>
+                                <span t-field="o.custom_field.unit_price"/>
+                            </th>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_sample_report" model="ir.actions.report">
+        <field name="name">Sample Report</field>
+        <field name="model">sale.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">sale_extension.sample_report_template</field>
+        <field name="report_file">sale_extension.sample_report_template</field>
+        <field name="print_report_name">'Sample Report'</field>
+    </record>
+</odoo>

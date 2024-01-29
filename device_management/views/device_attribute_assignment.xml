@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    &lt;!&ndash;    Device Attribute Assignment &ndash;&gt;-->
+<!--    &lt;!&ndash;    Tree View for Device Attributes Assignment&ndash;&gt;-->
+<!--    <record model="ir.ui.view" id="device_attribute_assignment_view_tree">-->
+<!--        <field name="name">device.attribute.assignment.tree</field>-->
+<!--        <field name="model">device.attribute.assignment</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree>-->
+<!--                <field name="device_id"/>-->
+<!--                <field name="device_attribute_id"/>-->
+<!--                <field name="device_attribute_value_id"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    &lt;!&ndash;    Form View for Device Attribute Assignment&ndash;&gt;-->
+<!--    <record model="ir.ui.view" id="device_attribute_assignment_view_form">-->
+<!--        <field name="name">device.attribute.assignment.form</field>-->
+<!--        <field name="model">device.attribute.assignment</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form>-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                        <field name="device_id"/>-->
+<!--                        <field name="device_attribute_id"/>-->
+<!--                        <field name="device_attribute_value_id"/>-->
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+
+<!--    &lt;!&ndash;    Action for Menu Visibility&ndash;&gt;-->
+<!--    <record id="action_device_attribute_assignment_view" model="ir.actions.act_window">-->
+<!--        <field name="name">Device Attributes Assignment</field>-->
+<!--        <field name="type">ir.actions.act_window</field>-->
+<!--        <field name="res_model">device.attribute.assignment</field>-->
+<!--        <field name="view_ids" eval="[(5, 0, 0),-->
+<!--        (0, 0, {'view_mode': 'tree', 'view_id': ref('device_attribute_assignment_view_tree')}),-->
+<!--        (0, 0, {'view_mode': 'form', 'view_id': ref('device_attribute_assignment_view_form')})-->
+<!--    ]"/>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
+
+</odoo>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="hr_employee_inherit_form_view" model="ir.ui.view">
+            <field name="name">hr.employee</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[@name='hr_settings']" position="after">
+                    <page string="Device Assigned">
+                        <field name="device_ids">
+                            <tree>
+                                <field name="device_id"/>
+                                <field name="employee_id"/>
+                                <field name="date_start"/>
+                                <field name="date_expire"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

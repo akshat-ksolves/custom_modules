@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="view_check_appointment_wizard_form" model="ir.ui.view">
+            <field name="name">check.appointment.wizard.form</field>
+            <field name="model">check.appointment.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"/>
+                        <field name="patient_name"/>
+                        <field name="appointment_date" invisible="name == False"/>
+                        <field name="appointment_time" invisible="appointment_date == False"/>
+                        <footer>
+                            <button string="Check Appointment" type="object" class="oe_highlight"
+                                    name="check_slot" invisible="appointment_time == False"/>
+                            <button string="Cancel" special="cancel" />
+                        </footer>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+            <record id="action_check_appointment_wizard" model="ir.actions.act_window">
+            <field name="name">Check Appointment</field>
+            <field name="res_model">check.appointment.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="hospital_management_system.view_check_appointment_wizard_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <!--        <button string="Check Appointment" type="object" class="oe_highlight"-->
+        <!--                name="action_open_check_appointment_wizard"/>-->
+
+    </data>
+</odoo>

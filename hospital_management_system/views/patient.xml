@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--    Form View for Patient-->
+    <record model="ir.ui.view" id="hospital_patient_form">
+        <field name="name">hospital.patient.form</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <form>
+                    <header>
+                        <button name="%(action_check_appointment_wizard)d" string="Check Appointment" type="action"/>
+<!--                        <button type="object" name="create_record">Insert Record</button>-->
+<!--                        <button string="Delete" type="object" name="delete_func"/>-->
+                    </header>
+                <sheet>
+                    <h3>
+                        New Patient Registration
+                    </h3>
+                    <group>
+                        <field name="patient_name"/>
+                        <field name="age"/>
+                        <field name="isAdult"/>
+                        <field name="notes"/>
+                        <field name="gender"/>
+                        <field name="doctor_assigned"/>
+                        <field name="company_id"/>
+                        <field name="medicine_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+
+    <!--Tree View for Patient-->
+    <record model="ir.ui.view" id="hospital_patient_tree">
+        <field name="name">hospital.patient.tree</field>
+        <field name="model">hospital.patient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="patient_name"/>
+                <field name="age"/>
+                <field name="isAdult"/>
+                <field name="notes"/>
+                <field name="gender"/>
+                <field name="doctor_assigned"/>
+                <field name="medicine_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Action of Patient-->
+    <record id="action_hospital_patient" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('hospital_patient_tree')}),
+        (0, 0, {'view_mode': 'form', 'view_id': ref('hospital_patient_form')}),
+    ]"/>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

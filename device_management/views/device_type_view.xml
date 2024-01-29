@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--    Tree View for Device Type-->
+    <record model="ir.ui.view" id="device_type_view_tree">
+        <field name="name">device.type.tree</field>
+        <field name="model">device.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+<!--                <field name="dev"/>-->
+<!--                <field name="device_attribute_ids" widget="many2many_tags"/>-->
+<!--                <field name="device_model_ids" widget="many2many_tags"/>-->
+<!--                <field name="device_ids" widget="many2many_tags"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <!--    Form View for Device Type-->
+    <record model="ir.ui.view" id="device_type_view_form">
+        <field name="name">device.type.form</field>
+        <field name="model">device.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="code"/>
+<!--                    <field name="dev"/>-->
+<!--                    <field name="device_attribute_ids" widget="many2many_tags"/>-->
+<!--                    <field name="device_model_ids" widget="many2many_tags"/>-->
+<!--                    <field name="device_ids" widget="many2many_tags"/>-->
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!--    Action for Device Type-->
+    <record id="action_device_type_view" model="ir.actions.act_window">
+        <field name="name">Device Type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">device.type</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('device_type_view_tree')}),
+        (0, 0, {'view_mode': 'form', 'view_id': ref('device_type_view_form')})
+    ]"/>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!--    Main Menu and Sub Menu for Device Management Module-->
+
+    <menuitem id="device_management_menu_root" name="Device Management">
+
+        <menuitem id="menu_device_view" name="Device">
+            <menuitem id="device_menu" name="Device Details" sequence="10"
+                      action="device_management.action_device_view"/>
+            <menuitem id="device_type_menu" name="Device Type" sequence="20"
+                      action="device_management.action_device_type_view"/>
+            <menuitem id="device_model_menu" name="Device Model" sequence="30"
+                      action="device_management.action_device_model_view"/>
+            <menuitem id="device_brand_menu" name="Device Brand" sequence="40"
+                      action="device_management.action_device_brand_view"/>
+        </menuitem>
+
+        <menuitem id="menu_device_attributes_view" name="Attributes">
+            <menuitem id="device_attribute_menu" name="Device Attributes" sequence="10"
+                      action="device_management.device_attribute_action"/>
+            <menuitem id="device_attribute_assignment_assignment_value_menu" name="Attribute Assignment Value"
+                      sequence="30"
+                      action="device_management.action_device_attribute_assignment_value_view"/>
+        </menuitem>
+
+        <menuitem id="menu_device_assigned_view" name="Device Assignment">
+            <menuitem id="device_assignment_menu" name="Device Assigned" sequence="10"
+                      action="device_management.action_device_assignment_view"/>
+        </menuitem>
+
+        <menuitem id="employee_view_menu" name="Employee" action="hr.open_view_employee_list_my"/>
+
+    </menuitem>
+</odoo>

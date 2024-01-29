@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="hospital_appointment_form">
+        <field name="name">hospital.appointment.form</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button type="action" name="%(action_appointment_receipt)d" string="Download Appointment Slip" class="oe_highlight"/>
+                    <button string="Share Appointment Slip over Email" type="object" name="send_appointment_mail" />
+                    <button string="Fetch Appointments" type="object" name="fetch_appointments"/>
+                    <button string="Update Name" type="object" name="update_name"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="gender"/>
+                        <field name="doctor_assigned"/>
+                        <field name="appointment_date"/>
+                        <field name="appointment_time"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="hospital_appointment_tree">
+        <field name="name">hospital.appointment.tree</field>
+        <field name="model">hospital.appointment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="gender"/>
+                <field name="doctor_assigned"/>
+                <field name="appointment_date"/>
+                <field name="appointment_time"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_hospital_appointment" model="ir.actions.act_window">
+        <field name="name">Appointment</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.appointment</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('hospital_appointment_tree')}),
+        (0, 0, {'view_mode': 'form', 'view_id': ref('hospital_appointment_form')}),
+    ]"/>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

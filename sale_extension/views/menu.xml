@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="menu_sale_extension_root" name="Sale Extension">
+        <menuitem id = "dummy_menu_sale_extension" name="Dummy" action="sale_extension.action_sale_extension_form"/>
+<!--        <menuitem id="report_menuitem" name="Report Menu item" action="sale_extension.action_sample_report"/>-->
+    </menuitem>
+</odoo>

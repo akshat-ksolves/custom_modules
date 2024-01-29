@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <!--    Form view for Student Details-->
+    <record model="ir.ui.view" id="class_teacher_form">
+        <field name="name">class.teacher.form</field>
+        <field name="model">class.teacher</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="age"/>
+                        <field name="teacher_subject"/>
+                        <field name="alloted_class"/>
+<!--                        <field name="class_students"/>-->
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+<!--    Tree View for Student Details-->
+    <record model="ir.ui.view" id="class_teacher_tree">
+        <field name="name">class.teacher.tree</field>
+        <field name="model">class.teacher</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="age"/>
+                <field name="teacher_subject"/>
+                <field name="alloted_class"/>
+<!--                <field name="class_students"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <!--    Action-->
+    <record id="action_class_teacher" model="ir.actions.act_window">
+        <field name="name">class teacher</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">class.teacher</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('class_teacher_tree')}),
+        (0, 0, {'view_mode': 'form', 'view_id': ref('class_teacher_form')}),
+    ]"/>
+        <!--        <field name="view_mode">tree,form</field>-->
+    </record>
+
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--    <record id="action_send_email" model="mail.template">-->
+<!--            <field name="name">Send email</field>-->
+<!--            <field name="model_id" ref="model_hospital_appointment"/>-->
+<!--            <field name="email_from">akshat.mourya@ksolves.com</field>-->
+<!--            <field name="email_to">aman.ali@ksolves.com</field>-->
+<!--            <field name="subject">Hello</field>-->
+<!--            <field name="description">Sent to customers with their invoices in attachment</field>-->
+<!--            <field name="body_html" type="html">-->
+<!--                <p> Hi this is custom email template</p>-->
+<!--            </field>-->
+<!--        </record>-->
+</odoo>

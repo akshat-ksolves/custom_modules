@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <menuitem id="menu_hospital_root" name="Odoo School">
+        <menuitem id="menu_students" name="Student Details" sequence="10"
+                  action="odoo_school.action_school_student"/>
+        <menuitem id="menu_class_list" name="Class Details" sequence="20"
+                  action="odoo_school.action_school_class"/>
+        <menuitem id="menu_teacher" name="Teacher Details" sequence="30"
+                  action="odoo_school.action_class_teacher"/>
+    </menuitem>
+</odoo>

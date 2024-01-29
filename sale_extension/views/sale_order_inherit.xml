@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sale_order_inherit_form_view" model="ir.ui.view">
+            <field name="name">sale.order.extension</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@id='send_by_email_primary']" position="before">
+                    <button type="action" name="%(action_sample_report)d" string="Generate Report" class="oe_highlight"/>
+                    <button type="action" name="%(action_data_display_wizard)d" string="Wizard" class="oe_highlight"/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='customer_signature']" position="after">
+                    <page string="Custom Order Lines">
+                        <field name="custom_field">
+                            <tree editable="bottom">
+                                <field name='name'/>
+                                <!--                                <field name='order_id'/>-->
+                                <field name='description'/>
+                                <field name='quantity'/>
+                                <field name='unit_price'/>
+                                <field name='taxes'/>
+                                <field name='tax_excl'/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+
+
+
+<!--<xpath expr="//button[@sample_report_action]" position="before">&ndash;&gt;-->
+<!--                    <button type="action" name="%(sample_report_action)d" string="Generate Report"/>-->
+<!--                </xpath> -->

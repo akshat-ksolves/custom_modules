@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--Form View-->
+    <record model="ir.ui.view" id="class_view_form">
+        <field name="name">school.class.form</field>
+        <field name="model">school.class</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="section"/>
+                        <field name="class_teacher"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Tree View-->
+    <record model="ir.ui.view" id="class_view_tree">
+        <field name="name">school.class.tree</field>
+        <field name="model">school.class</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="section"/>
+                <field name="class_teacher"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_school_class" model="ir.actions.act_window">
+        <field name="name">school class</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">school.class</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('class_view_tree')}),
+        (0, 0, {'view_mode': 'form', 'view_id': ref('class_view_form')}),
+    ]"/>
+    </record>
+
+</odoo>

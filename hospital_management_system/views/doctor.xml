@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<!--Form View for Doctor-->
+    <record model="ir.ui.view" id="hospital_doctor_form">
+        <field name="name">hospital.doctor.form</field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <form>
+                <h3>
+                    New Doctor Registration
+                </h3>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="doctor_dob"/>
+                        <field name="doctor_age"/>
+                        <field name="doctor_department"/>
+                        <field name="doctor_education"/>
+                        <field name="doctor_advice"/>
+                        <field name="doctor_gender"/>
+                        <field name="doctor_patient"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+<!--Tree View for Doctor-->
+    <record model="ir.ui.view" id="hospital_doctor_tree">
+        <field name="name">hospital.doctor.tree</field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+<!--                <field name="doctor_dob"/>-->
+                <field name="doctor_age"/>
+                <field name="doctor_department"/>
+                <field name="doctor_education"/>
+                <field name="doctor_advice"/>
+                <field name="doctor_gender"/>
+                <field name="doctor_patient"/>
+            </tree>
+        </field>
+    </record>
+
+<!--Action for Doctor-->
+    <record id="action_hospital_doctor" model="ir.actions.act_window">
+        <field name="name">Doctor</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hospital.doctor</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+        (0, 0, {'view_mode': 'tree', 'view_id': ref('hospital_doctor_tree')}),
+        (0, 0, {'view_mode': 'form', 'view_id': ref('hospital_doctor_form')}),
+    ]"/>
+        <!--        <field name="view_id" ref="hospital_doctor_tree"/>-->
+        <field name="view_mode">tree,form</field>
+
+    </record>
+</odoo>
