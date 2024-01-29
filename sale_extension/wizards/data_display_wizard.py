@@ -1,6 +1,5 @@
 from odoo import api, fields, models
 
-
 class DataDisplayWizard(models.TransientModel):
     _name = 'data.display.wizard'
 
@@ -10,27 +9,25 @@ class DataDisplayWizard(models.TransientModel):
     def save_data(self):
         sale_id = self.wizard_id
         # self.env['custom.order.line'].unlink()
-        lst = []
         for rec in self.wizard_order_line:
             # if rec.name.exists():
             #     continue
             # else:
-            # record = self.env['custom.order.line.wiz'].browse(
-            #     [('custom_field.name.id', '=', rec.name.id)])
-            # if record.exists():
-            #     continue
-            # else:
-            new_field = self.env['custom.order.line'](0, 0,{
-                'name': rec.name.id,
-                'order_id': rec.order_id,
-                'description': rec.description,
-                'quantity': rec.quantity,
-                'unit_price': rec.unit_price,
-                'taxes': rec.taxes,
-                'tax_excl': rec.tax_excl
-            })
-            lst.append(new_field.id)
-        sale_id.custom_field.write([(6, 0, lst.ids)])
+                # record = self.env['custom.order.line.wiz'].browse(
+                #     [('custom_field.name.id', '=', rec.name.id)])
+                # if record.exists():
+                #     continue
+                # else:
+                line = {
+                    'name': rec.name.id,
+                    'order_id': rec.order_id,
+                    'description': rec.description,
+                    'quantity': rec.quantity,
+                    'unit_price': rec.unit_price,
+                    'taxes': rec.taxes,
+                    'tax_excl': rec.tax_excl
+                }
+                sale_id.custom_field = [(0, 0, line)]
 
     @api.model
     def default_get(self, fields):
