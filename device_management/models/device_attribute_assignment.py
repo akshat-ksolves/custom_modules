@@ -5,6 +5,7 @@ class DeviceAttributeAssignment(models.Model):
     _name = 'device.attribute.assignment'
     _description = 'This is Device Attribute Assignment Model'
 
+
     # Defining Fields for the given Model
     device_id = fields.Many2one('device.device', string="Device Name")
     device_attribute_id = fields.Many2one('device.attribute', string="Device Attribute")
