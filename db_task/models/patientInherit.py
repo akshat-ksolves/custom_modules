@@ -36,23 +36,23 @@ class PatientInherit(models.Model):
         connection.close()
 
     def select_records(self):
-        conn = pyodbc.connect(
-            'DRIVER={PostgreSQL ANSI};Server=localhost;Port=54320;Database=new_db;User ID=odoo;Password=odoo16')
-        cursor = conn.cursor()
-        cursor.execute('SELECT * FROM hospital_patient')
-        rows = cursor.fetchall()
-        for row in rows:
-            print(row)
-        cursor.close()
-        conn.close()
+        # conn = pyodbc.connect(
+        #     'DRIVER={PostgreSQL ANSI};Server=localhost;Port=54320;Database=new_db;User ID=odoo;Password=odoo16')
+        # cursor = conn.cursor()
+        # cursor.execute('SELECT * FROM hospital_patient')
+        # rows = cursor.fetchall()
+        # for row in rows:
+        #     print(row)
+        # cursor.close()
+        # conn.close()
 
-        # connection = psycopg2.connect(database="new_db", user="odoo", host='localhost', password="odoo16", port=5432)
-        # print("Connection Established !")
-        # cr = connection.cursor()
-        # query = f"""SELECT * FROM hospital_patient"""
-        # cr.execute(query)
-        # connection.commit()
-        # data = cr.fetchall()
-        # print(data)
-        # cr.close()
-        # connection.close()
+        connection = psycopg2.connect(database="new_db", user="odoo", host='localhost', password="odoo16", port=5432)
+        print("Connection Established !")
+        cr = connection.cursor()
+        query = f"""SELECT * FROM hospital_patient"""
+        cr.execute(query)
+        connection.commit()
+        data = cr.fetchall()
+        print(data)
+        cr.close()
+        connection.close()
