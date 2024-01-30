@@ -27,7 +27,7 @@ class DataDisplayWizard(models.TransientModel):
                     'taxes': rec.taxes,
                     'tax_excl': rec.tax_excl
                 }
-                sale_id.custom_field = [(0, 0, line)]
+                sale_id.custom_field = [(2, self.wizard_id, 0)]
 
     @api.model
     def default_get(self, fields):

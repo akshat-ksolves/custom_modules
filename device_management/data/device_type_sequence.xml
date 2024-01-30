@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record id="seq_device_type" model="ir.sequence">
+            <field name="name">device type sequence</field>
+            <field name="code">device.type.sequence</field>
+            <field name="prefix">dev</field>
+            <field name="padding">3</field>
+            <field name="number_increment">1</field>
+        </record>
+    </data>
+</odoo>

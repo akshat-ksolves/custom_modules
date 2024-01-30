@@ -13,7 +13,6 @@
                         <field name="age"/>
                         <field name="teacher_subject"/>
                         <field name="alloted_class"/>
-<!--                        <field name="class_students"/>-->
                     </group>
                 </sheet>
             </form>
@@ -30,7 +29,6 @@
                 <field name="age"/>
                 <field name="teacher_subject"/>
                 <field name="alloted_class"/>
-<!--                <field name="class_students"/>-->
             </tree>
         </field>
     </record>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
-    <data>
+<odoo>
+    <data noupdate="1">
         <record id="seq_student_enrolment" model="ir.sequence">
             <field name="name">Student Enrolment</field>
-            <field name="code">school.student.sequence</field>
+            <field name="code">student.sequence</field>
             <field name="prefix">Stu</field>
             <field name="padding">3</field>
-            <field name="number_increment">1</field>
+            <field name="number_increment">10</field>
         </record>
     </data>
 </odoo>

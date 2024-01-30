@@ -11,11 +11,8 @@ class SchoolClass(models.Model):
     class_teacher = fields.Many2one('class.teacher', string="Class Teacher")
     class_students = fields.One2many('school.student', 'student_class_id', string="Students: ")
 
-    _sql_constraints = [('unique_name', 'unique(name)','Enter a Unique Name')]
+    _sql_constraints = [('unique_name', 'unique(name,class_teacher)', 'Enter a Unique Name')]
 
-    # def _calculate_class_strength(self):
-    #     strength = 0
-    #     for students in self.env['school.student']:
 
 
 class ClassSection(models.Model):

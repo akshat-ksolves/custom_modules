@@ -6,6 +6,7 @@
     'depends': ['base', 'hr'],
     'data': [
         'security/ir.model.access.csv',
+        'data/device_type_sequence.xml',
         'views/employee_inherit.xml',
         'views/device_view.xml',
         'views/device_type_view.xml',
