@@ -15,3 +15,12 @@ class DeviceAssignment(models.Model):
 
     # Defining Sql Constraints for the Given Model
     _sql_constraints = [('unique_name', 'unique(name)', 'Please Enter a unique name')]
+
+
+    def changeState(self):
+        self.write({'state':'approved'})
+        # for result_id in self.ids:
+        #     print(result_id)
+        # selected_ids = self.env.context.get('active_ids', [])
+        # selected_records = self.env['device.assignment'].browse(selected_ids)
+        # print(selected_records)

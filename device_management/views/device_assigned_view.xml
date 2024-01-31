@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
-    <record model="ir.ui.view" id="device_assignment_view">
+    <record model="ir.ui.view" id="device_assignment_tree">
         <field name="name">device.assignment.tree</field>
         <field name="model">device.assignment</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree js_class="changeStateButton">
                 <field name="name"/>
                 <field name="device_id"/>
                 <field name="employee_id"/>
@@ -20,6 +20,9 @@
         <field name="model">device.assignment</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button type="object" name="changeState" string="Dummy Button"/>
+                </header>
                 <sheet>
                     <group>
                     <field name="name"/>

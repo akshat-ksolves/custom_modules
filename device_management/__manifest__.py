@@ -16,6 +16,11 @@
         'views/device_attribute_assignment_value.xml',
         'views/custom_settings_view.xml',
         'views/menu.xml'
-        
-    ]
+    ],
+    'assets': {
+        'web.assets_backend': [
+            # 'device_management/static/src/js/customButton.xml',
+            'device_management/static/src/**/*',
+        ]
+    }
 }
