@@ -1,1 +1,1 @@
-from . import school_student, school_class
+from . import school_student, school_class, class_section, class_teacher, subject, fee

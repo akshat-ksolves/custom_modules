@@ -9,6 +9,7 @@ class SchoolStudent(models.Model):
     student_enrolment = fields.Char(string="Enrolment Number", readonly=True)
     student_class_id = fields.Many2one('school.class', string="Class")
     student_subject_ids = fields.Many2many('school.subject', string="Section")
+    # student_fee = fields.Integer(string="")
 
     @api.model
     def create(self, vals):

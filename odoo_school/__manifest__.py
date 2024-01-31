@@ -12,6 +12,7 @@
         'views/student_view.xml',
         'views/teacher_view.xml',
         'views/class_view.xml',
+        'views/fees.xml',
         'views/menu.xml'
     ]
 }

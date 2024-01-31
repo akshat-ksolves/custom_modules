@@ -7,5 +7,7 @@
                   action="odoo_school.action_school_class"/>
         <menuitem id="menu_teacher" name="Teacher Details" sequence="30"
                   action="odoo_school.action_class_teacher"/>
+        <menuitem id="menu_fees" name="Fees" sequence="40"
+                  action="odoo_school.action_school_fees"/>
     </menuitem>
 </odoo>

@@ -39,6 +39,8 @@
         <field name="name">school student</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">school.student</field>
+        <field name="domain">[('student_enrolment', '=', 'Stu011')]</field>
+        <field name="context">{'default_name': 'Test'}</field>
         <field name="view_ids" eval="[(5, 0, 0),
         (0, 0, {'view_mode': 'tree', 'view_id': ref('school_student_tree')}),
         (0, 0, {'view_mode': 'form', 'view_id': ref('school_student_form')}),
