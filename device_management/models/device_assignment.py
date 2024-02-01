@@ -18,7 +18,15 @@ class DeviceAssignment(models.Model):
 
 
     def changeState(self):
-        self.write({'state':'approved'})
+        if (len(self.ids)) == 0:
+            return False
+        else:
+            self.write({'state': 'approved'})
+            return {
+                'type': 'ir.actions.client',
+                'tag': "soft_reload",
+            }
+
         # for result_id in self.ids:
         #     print(result_id)
         # selected_ids = self.env.context.get('active_ids', [])

@@ -6,21 +6,27 @@ import { listView } from '@web/views/list/list_view';
 import { ListController } from '@web/views/list/list_controller';
 import { useService } from "@web/core/utils/hooks";
 
-export class CustomButton extends ListController {
+export class CustomButton extends ListController{
+
     setup(){
         super.setup();
         console.log("Hello")
         this.orm = useService("orm");
+       this.actionService = useService("action");
     }
+
     async changeState(){
          alert("Hello.....Method Called");
-//         debugger;
          var resIds = await this.getSelectedResIds();
          console.log(resIds);
-         let data = this.orm.call("device.assignment", "changeState", [resIds]);
-         console.log(data)
+         await this.orm.call("device.assignment", "changeState", [resIds])
+         .then((data)=>{
+         console.log(data, typeof(data))
+            this.actionService.doAction({...data});
+    })
     }
 }
+
 registry.category('views').add('changeStateButton',{
     ...listView,
     Controller: CustomButton,
