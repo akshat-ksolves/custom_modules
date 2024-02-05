@@ -6,6 +6,8 @@ import pyodbc
 class PatientInherit(models.Model):
     _inherit = "hospital.patient"
 
+
+    # CREATE DATA using PSYCOPG2
     def create(self, vals):
         super_call = super(PatientInherit, self).create(vals)
         connection = psycopg2.connect(database="new_db", user="odoo", host='localhost', password="odoo16", port=5432)
@@ -23,6 +25,7 @@ class PatientInherit(models.Model):
         connection.close()
         return super_call
 
+    # DELETE DATA using PSYCOPG2
     @api.model
     def delete_records(self, vals):
         connection = psycopg2.connect(database="new_db", user="odoo", host='localhost', password="odoo16", port=5432)
@@ -35,16 +38,8 @@ class PatientInherit(models.Model):
         cr.close()
         connection.close()
 
-    def select_records(self):
-        # conn = pyodbc.connect(
-        #     'DRIVER={PostgreSQL ANSI};Server=localhost;Port=54320;Database=new_db;User ID=odoo;Password=odoo16')
-        # cursor = conn.cursor()
-        # cursor.execute('SELECT * FROM hospital_patient')
-        # rows = cursor.fetchall()
-        # for row in rows:
-        #     print(row)
-        # cursor.close()
-        # conn.close()
+    # SELECT DATA using PSYCOPG2
+    def select_records(self, vals):
 
         connection = psycopg2.connect(database="new_db", user="odoo", host='localhost', password="odoo16", port=5432)
         print("Connection Established !")
@@ -56,3 +51,21 @@ class PatientInherit(models.Model):
         print(data)
         cr.close()
         connection.close()
+
+
+    # SELECT DATA using PYODBC Method
+    # def select_records(self):
+    #     user = "odoo"
+    #     password = "odoo16"
+    #     database = "new_db"
+    #     host = "localhost"
+    #
+    #     connection_string = f"DRIVER={{PostgreSQL ANSI}};SERVER={host};DATABASE={database};UID={user};PWD={password}"
+    #     conn = pyodbc.connect(connection_string)
+    #     cursor = conn.cursor()
+    #     cursor.execute('SELECT * FROM hospital_patient')
+    #     rows = cursor.fetchall()
+    #     for row in rows:
+    #         print(row)
+    #     cursor.close()
+    #     conn.close()

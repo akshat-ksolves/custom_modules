@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <data>
+        <record id="crm_lead_inherit_form_view" model="ir.ui.view">
+
+            <field name="name">crm.lead.inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <div class="oe_button_box" name="button_box">
+                    <button string="Cancelled Sale Orders" icon="fa-close" type="object" name="display_cancelled_sale_orders"/>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,5 +1,5 @@
 {
-    'name': "Device Managem ent",
+    'name': "Device Management",
     'category': 'Device Management',
     'description': 'This is Device Management Application for the assignment sheet',
     'author': 'Akshat Mourya',
@@ -20,7 +20,7 @@
     'assets': {
         'web.assets_backend': [
             # 'device_management/static/src/js/customButton.xml',
-            'device_management/static/src/**/*',
+            # 'device_management/static/src/**/*',
         ]
     }
 }

@@ -3,7 +3,7 @@
 <!--    <t t-inherit="web.ListView.Buttons" t-inherit-mode="extension" owl="1" >-->
 <!--        <xpath expr="//div[hasclass('o_list_buttons')]" position="after">-->
 <!--            <button type="button" class="btn btn-primary" t-on-click="changeState">-->
-<!--                Global Button-->
+<!--                Change State-->
 <!--            </button>-->
 <!--        </xpath>-->
 <!--    </t>-->

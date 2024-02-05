@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <data>
+        <record id="project_task_inherit_form_view" model="ir.ui.view">
+
+            <field name="name">project.task.assigned</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_form2"/>
+            <field name="arch" type="xml">
+                <div class="oe_button_box" name="button_box">
+
+                    <button class="oe_stat_button" type="object" name="get_saleOrders"
+                        icon="fa-list">Sale Order List</button>
+
+                    <button class="oe_stat_button" type="object" name="open_wizard_sale_order"
+                        icon="fa-file-text-o">
+                        Wizard
+                    </button>
+
+                </div>
+                <xpath expr="//notebook/page[@name='extra_info']" position="after">
+                    <page string="Sale Orders Assigned">
+                        <field name="sale_order_ids" widget="one2many" readonly="1" style="pointer-events: none;"/>
+
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
